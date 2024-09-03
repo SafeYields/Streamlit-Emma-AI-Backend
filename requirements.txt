@@ -6,3 +6,4 @@ langdetect
 openai
 faiss-cpu
 python-dotenv
+tiktoken
