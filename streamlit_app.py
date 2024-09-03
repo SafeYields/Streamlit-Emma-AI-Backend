@@ -8,18 +8,16 @@ from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain_community.chat_models import ChatOpenAI
-from dotenv import load_dotenv
+
 import langdetect
 
-# Load environment variables from a .env file
-load_dotenv()
 
 # Set OpenAI API key from environment variables
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Constants
 VECTOR_STORE_DIR = "vectorstore_cottechapp1"
-PDF_PATHS = []
+PDF_PATHS = ["SafeYields_PitchDeck.pdf", "Whitepaper_SafeYields_V4.pdf"]
 
 # Define the system prompt template for Emma AI
 general_system_template = """
