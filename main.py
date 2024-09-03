@@ -15,8 +15,7 @@ import langdetect
 load_dotenv()
 
 # Set OpenAI API key from environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Constants
 VECTOR_STORE_DIR = "vectorstore_cottechapp1"
