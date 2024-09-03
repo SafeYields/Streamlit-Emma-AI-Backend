@@ -47,7 +47,7 @@ Context: {context}
 """
 
 # Define the user prompt template
-general_user_template = "Question: ```{question}```"
+general_user_template = "Question: {question}"
 
 # Construct the QA prompt using system and user templates
 qa_prompt = ChatPromptTemplate.from_messages([
@@ -139,7 +139,7 @@ def get_conversational_chain(vector_store):
     Returns:
         ConversationalRetrievalChain: The conversational retrieval chain object.
     """
-    llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-4o", temperature=0.2,max_tokens=1000)
+    llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model_name="gpt-4o", temperature=0.3,max_tokens=1000)
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     
     conversation_chain = ConversationalRetrievalChain.from_llm(
